@@ -1,0 +1,14 @@
+%Vẽ 1 xung hình chữ nhật có chu kỳ T
+clc; clear; close all;
+T = 1000;
+t = -T/2 : T/999 : T/2;
+A = zeros(size(t));
+A(t>-T/2&t<T/2)=1;
+figure;
+hold on;
+plot(t,A, 'LineWidth',2);
+
+
+xlabel('Thời gian');
+ylabel('Trục Y');
+title('Đồ thị xung hình chữ nhât')
