@@ -1,7 +1,7 @@
 clc; clear; close all;
 filename = 'VinhHaLong.jpg';
 %Đọc ảnh
-[gray_img,m,n] = read_image(filename);
+[img,gray_img,m,n] = read_image(filename);
 %Chuyển thành nhị phân
 [binary_matrix] = Convert_Binary(filename);
 %Chuyển từ nhị phân thành ảnh 
