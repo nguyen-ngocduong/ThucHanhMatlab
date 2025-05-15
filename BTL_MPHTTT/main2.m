@@ -20,7 +20,7 @@ plot_results(modulated, rx_signal, ber, SNR_dBs, M, k);
 
 % 5. Khôi phục ảnh (nếu có)
 if ~isempty(m) && ~isempty(n)
-    rx_bits = rx_bits(1:m*n*8);  % Cắt đúng độ dài ảnh
+    rx_bits = rx_bits(1:m*n*8*3);  % Cắt đúng độ dài ảnh
     reconstructed = Binary2Image_FromBits(rx_bits, m, n);
     figure;
     imshow(reconstructed); title('Ảnh phục hồi sau truyền 64-PSK');
