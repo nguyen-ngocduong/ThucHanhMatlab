@@ -11,8 +11,15 @@ function plot_results(tx, rx, ber, SNRs, M, k)
     title('Dạng sóng phát (biên độ theo thời gian)');
     subplot(2,1,2); pwelch(tx); title('Phổ công suất');
 
-    %samples_per_symbol = 8;
-    %oversampled = upsample(tx, samples_per_symbol);
-    %figure; eyediagram(real(oversampled), 2*samples_per_symbol);
-    %title(sprintf('Mẫu mắt của tín hiệu %d-PSK', M));
+    % Tạo tín hiệu oversampled cho mẫu mắt thô
+    samples_per_symbol = 8;
+    oversampled = upsample(real(tx), samples_per_symbol);
+    N = 400000; % Số điểm để vẽ thủ công
+    figure;
+    stem(oversampled(1:N));
+    title('Biểu diễn thời gian');
+    % Vẽ biểu đồ mẫu mắt thực tế
+    figure;
+    eyediagram(oversampled(1:N), 2*samples_per_symbol);
+    title(sprintf('Mẫu mắt của tín hiệu %d-PSK', M));
 end
